@@ -1,0 +1,23 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FF5500</item>
+        <item name="colorPrimaryDark">#FF5500</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+    <!--toolbar标题文字颜色-->
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@android:color/white</item><!--右边按钮的颜色-->
+        <item name="android:textColorPrimary">@android:color/white</item><!--文字颜色-->
+    </style>
+    <!-- toolbar弹出菜单样式 -->
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat">
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+</resources>

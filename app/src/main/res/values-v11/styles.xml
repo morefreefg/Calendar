@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="my_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#00BCD4</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">#212121</item>
+     <!--   <item name="android:onClick">dialogShow</item>  -->
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- main_activity的LinearLayout的style -->
+    <style name="my_layout">
+        <item name="android:background">#FFEB3B</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <!-- cell布局中的cardview样式 -->
+    <style name="my_cardview" >
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+
+
+    <style name="secondaty_ziti" >
+        <item name="android:textColor">#727272</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
+</resources>
