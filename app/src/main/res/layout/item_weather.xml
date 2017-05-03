@@ -1,10 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
     android:layout_margin="10dp"
     android:background="@android:color/white"
-   >
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/tvDayofWeek"
@@ -12,8 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="2017-06-08"
-        />
+        android:text="2017-06-08" />
 
     <TextView
         android:id="@+id/tvTemperature"
@@ -22,7 +20,8 @@
         android:layout_alignLeft="@+id/tvDayofWeek"
         android:layout_below="@+id/tvDayofWeek"
         android:layout_marginTop="15dp"
-        android:text="temperature"/>
+        android:text="temperature" />
+
     <TextView
         android:id="@+id/tvWeather"
         android:layout_width="wrap_content"
@@ -30,6 +29,6 @@
         android:layout_alignLeft="@+id/tvTemperature"
         android:layout_below="@+id/tvTemperature"
         android:layout_marginTop="15dp"
-        android:text="weather"/>
+        android:text="weather" />
 
 </RelativeLayout>

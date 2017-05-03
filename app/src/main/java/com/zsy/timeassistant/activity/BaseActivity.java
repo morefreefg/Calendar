@@ -21,20 +21,23 @@ import com.zsy.timeassistant.R;
 public class BaseActivity extends AppCompatActivity {
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-
-
+    Toast toast = null;
+    /**
+     * 弹出progressdialog进度对话框
+     */
+    ProgressDialog dialog;
     /**
      * 显示吐司
+     *
      * @param context 上下文
      * @param msg     显示的内容
      */
     private long lastTime = 0;
-    Toast toast = null;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     public void showToast(Context context, String msg) {
 //        获得当前日期
@@ -49,8 +52,10 @@ public class BaseActivity extends AppCompatActivity {
 
         lastTime = nowTime;
     }
+
     /**
      * 判断手机网络是否连接
+     *
      * @param context 上下文
      * @return true 有网 |false 无网络
      */
@@ -65,6 +70,7 @@ public class BaseActivity extends AppCompatActivity {
             return false;
         }
     }
+
     /**
      * 初始化标题栏
      */
@@ -89,10 +95,6 @@ public class BaseActivity extends AppCompatActivity {
         }
         return toolbar;
     }
-    /**
-     * 弹出progressdialog进度对话框
-     */
-    ProgressDialog dialog;
 
     public void showDialog(String Msg) {
         if (dialog == null) {
@@ -103,6 +105,7 @@ public class BaseActivity extends AppCompatActivity {
         dialog.setMessage(Msg);
         dialog.show();
     }
+
     /**
      * 消失dialog
      */

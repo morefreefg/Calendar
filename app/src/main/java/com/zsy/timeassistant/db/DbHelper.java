@@ -10,25 +10,25 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DbHelper extends SQLiteOpenHelper {
 
-	public DbHelper(Context context) {
-		super(context, "time.db", null, 1);
-	}
+    public DbHelper(Context context) {
+        super(context, "time.db", null, 1);
+    }
 
-	@Override
-	public void onCreate(SQLiteDatabase db) {
-		// 创建用户信息表
-		db.execSQL("create table user(id integer primary key autoincrement,userName varchar(20),password varchar(20))");
-		// 创建用户备忘表
-		db.execSQL(
-				"create table memo(id integer primary key autoincrement,time varchar(20),title varchar(40),content varchar(100))");
-		// 创建用户记录表
-		db.execSQL(
-				"create table noto(id integer primary key autoincrement,time varchar(20),title varchar(40),content varchar(100),pic varchar(100),audio varchar(100))");
-	}
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // 创建用户信息表
+        db.execSQL("create table user(id integer primary key autoincrement,userName varchar(20),password varchar(20))");
+        // 创建用户备忘表
+        db.execSQL(
+                "create table memo(id integer primary key autoincrement,time varchar(20),title varchar(40),content varchar(100))");
+        // 创建用户记录表
+        db.execSQL(
+                "create table noto(id integer primary key autoincrement,time varchar(20),title varchar(40),content varchar(100),pic varchar(100),audio varchar(100))");
+    }
 
-	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-	}
+    }
 
 }

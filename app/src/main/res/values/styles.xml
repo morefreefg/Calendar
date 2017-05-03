@@ -4,10 +4,10 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#FF5500</item>
-        <item name="colorPrimaryDark">#FF5500</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">#FF4081</item>
     </style>
     <!--toolbar标题文字颜色-->
@@ -20,4 +20,5 @@
         <item name="android:colorBackground">@android:color/white</item>
         <item name="android:textColorPrimary">@android:color/black</item>
     </style>
+
 </resources>

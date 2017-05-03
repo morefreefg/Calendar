@@ -12,7 +12,7 @@ public interface RequestImpl {
 
 
     @POST("forecast")
-    Call<WeatherBean> getWeather(@Query("city") String city,@Query("key") String key);
+    Call<WeatherBean> getWeather(@Query("city") String city, @Query("key") String key);
 }
 
 

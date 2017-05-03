@@ -45,7 +45,7 @@ public class AddNoteActivity extends BaseActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addcontent);
         //调用baseactivity的inittoolbar{}方法
-        initToolBar("添加记录",true);
+        initToolBar("添加记录", true);
         noteDB = new NoteDB(this);
         dbWriter = noteDB.getWritableDatabase();//以读写方式打开数据库
 
@@ -59,7 +59,8 @@ public class AddNoteActivity extends BaseActivity implements View.OnClickListene
         c_img = (ImageView) findViewById(R.id.c_img);
 
     }
-//添加数据
+
+    //添加数据
     public void addDB() {
         ContentValues cv = new ContentValues();
         cv.put(NoteDB.CONTENT, edtext.getText().toString());
@@ -67,17 +68,19 @@ public class AddNoteActivity extends BaseActivity implements View.OnClickListene
         cv.put(NoteDB.PATH, imageUrl + "");
         cv.put(NoteDB.VIDEO, "");
         dbWriter.insert(NoteDB.TABLE_NAME, null, cv);
-        showToast(AddNoteActivity.this,"添加成功");
+        showToast(AddNoteActivity.this, "添加成功");
         finish();
     }
-//格式化输出日期
+
+    //格式化输出日期
     public String getTime() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
         Date date = new Date();
         String str = format.format(date);   //  yyyy年MM月dd日 HH:mm:ss
         return str;
     }
-//添加图片
+
+    //添加图片
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -104,7 +107,7 @@ public class AddNoteActivity extends BaseActivity implements View.OnClickListene
                         // TitleBar背景色
                         .titleBgColor(getResources().getColor(R.color.colorPrimaryDark))
                         // 裁剪大小。needCrop为true的时候配置
-                        .cropSize(1, 1, 64, 64)
+                        .cropSize(1, 1, 1024, 1024)
                         .needCrop(true)
                         // 第一个是否显示相机
                         .needCamera(true)
@@ -131,12 +134,12 @@ public class AddNoteActivity extends BaseActivity implements View.OnClickListene
 
         if (requestCode == 1) {
             List<String> pathList = data.getStringArrayListExtra(ImgSelActivity.INTENT_RESULT);
-            if (pathList.size()>0){
+            if (pathList.size() > 0) {
                 StringBuffer buffer = new StringBuffer();
                 for (String path : pathList) {
                     buffer.append(path);
                 }
-                imageUrl=pathList.get(0);
+                imageUrl = pathList.get(0);
                 Bitmap bitmap = BitmapFactory.decodeFile(pathList.get(0));
                 c_img.setImageBitmap(bitmap);
             }

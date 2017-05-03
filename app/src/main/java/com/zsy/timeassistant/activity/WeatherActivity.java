@@ -28,19 +28,19 @@ public class WeatherActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        initToolBar("天气预报-南京",true);
+        initToolBar("天气预报-南京", true);
         listView = (ListView) findViewById(R.id.list);
         showDialog("正在加载天气数据...");
-        createRetrofit().create(RequestImpl.class).getWeather("南京","0f024f4ce7994e468014ba8c0d5ecb29").enqueue(new Callback<WeatherBean>() {
+        createRetrofit().create(RequestImpl.class).getWeather("南京", "0f024f4ce7994e468014ba8c0d5ecb29").enqueue(new Callback<WeatherBean>() {
             @Override
             public void onResponse(Call<WeatherBean> call, Response<WeatherBean> response) {
                 dimissDialog();
-               WeatherBean weatherBean=response.body();
-                if (weatherBean.getHeWeather5().size()>0){
-                    WeatherAdapter adapter=new WeatherAdapter(WeatherActivity.this,weatherBean);
+                WeatherBean weatherBean = response.body();
+                if (weatherBean.getHeWeather5().size() > 0) {
+                    WeatherAdapter adapter = new WeatherAdapter(WeatherActivity.this, weatherBean);
                     listView.setAdapter(adapter);
-                }else {
-                    Toast.makeText(WeatherActivity.this,"获取天气失败",Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(WeatherActivity.this, "获取天气失败", Toast.LENGTH_SHORT);
                 }
 
             }
@@ -48,16 +48,16 @@ public class WeatherActivity extends BaseActivity {
             @Override
             public void onFailure(Call<WeatherBean> call, Throwable t) {
                 dimissDialog();
-                Toast.makeText(WeatherActivity.this,"网络错误",Toast.LENGTH_SHORT);
+                Toast.makeText(WeatherActivity.this, "网络错误", Toast.LENGTH_SHORT);
             }
         });
     }
 
-        /**
-         * 创建一个Retrofit请求对象
-         *
-         * @return Retrofit
-         */
+    /**
+     * 创建一个Retrofit请求对象
+     *
+     * @return Retrofit
+     */
     public Retrofit createRetrofit() {
         return new Retrofit.Builder().baseUrl("https://free-api.heweather.com/v5/")
                 .addConverterFactory(ScalarsConverterFactory.create())

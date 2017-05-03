@@ -5,6 +5,5 @@
     <item
         android:id="@+id/menu_add"
         android:title="新增"
-        app:showAsAction="always"
-        />
+        app:showAsAction="always" />
 </menu>
